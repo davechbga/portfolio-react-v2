@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./qualification.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 
 const Qualification = () => {
   const [toggleState, setToggleState] = useState(1);
@@ -9,8 +11,24 @@ const Qualification = () => {
   };
   return (
     <section className="qualification section" id="qualification">
-      <h2 className="section__title">Qualification</h2>
-      <span className="section__subtitle">My personal journey</span>
+      <motion.h2
+        variants={fadeIn("up", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="section__title"
+      >
+        Qualification
+      </motion.h2>
+      <motion.span
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="section__subtitle"
+      >
+        My personal journey
+      </motion.span>
 
       <div className="qualification__container container">
         <div className="qualification__tabs">
@@ -37,21 +55,14 @@ const Qualification = () => {
             <i className="uil uil-briefcase-alt qualification__icon"></i>
             Experience
           </div>
-          {/* <div
-            onClick={() => toggleTab(3)}
-            className={
-              toggleState === 3
-                ? "qualification__button qualification__active button--flex"
-                : "qualification__button button--flex"
-            }
-          >
-            <i className="uil uil-medal qualification__icon"></i>
-            Certifications
-          </div> */}
         </div>
 
         <div className="qualification__sections">
-          <div
+          <motion.div
+            variants={fadeIn("right", 0.4)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
             className={
               toggleState === 1
                 ? "qualification__content qualification__content-active"
@@ -92,9 +103,13 @@ const Qualification = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div
+            variants={fadeIn("left", 0.4)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
             className={
               toggleState === 2
                 ? "qualification__content qualification__content-active"
@@ -152,7 +167,9 @@ const Qualification = () => {
             <div className="qualification__data">
               <div>
                 <h3 className="qualification__title">Graphic Designer</h3>
-                <span className="qualification__subtitle">Delicias de Normita</span>
+                <span className="qualification__subtitle">
+                  Delicias de Normita
+                </span>
                 <div className="qualification__calender">
                   <i className="uil uil-calendar-alt"></i> 2018 - 2020
                 </div>
@@ -163,61 +180,7 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
             </div>
-          </div>
-
-          {/* <div
-            className={
-              toggleState === 3
-                ? "qualification__content qualification__content-active"
-                : "qualification__content"
-            }
-          >
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">Python 3</h3>
-                <span className="qualification__subtitle">Udemy</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> Dec. 2020
-                </div>
-              </div>
-
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-            </div>
-            <div className="qualification__data">
-              <div></div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-
-              <div>
-                <h3 className="qualification__title">JavaScript</h3>
-                <span className="qualification__subtitle">Udemy</span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> Jan. 2021
-                </div>
-              </div>
-            </div>
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">Angular</h3>
-                <span className="qualification__subtitle">
-                  Udemy
-                </span>
-                <div className="qualification__calender">
-                  <i className="uil uil-calendar-alt"></i> Mar. 2021
-                </div>
-              </div>
-
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-            </div>
-          </div> */}
+          </motion.div>
         </div>
       </div>
     </section>

@@ -136,6 +136,22 @@ const Header = () => {
                 <i className="uil uil-message nav__icon"></i> Contact
               </a>
             </li>
+            <li className="nav__item">
+              <a
+                className={
+                  activeNav === "#contact"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+                onClick={toggleTheme}
+              >
+                {theme === "light-theme" ? (
+                  <i className="uil uil-moon nav__dark-icon"></i>
+                ) : (
+                  <i className="uil uil-brightness nav__dark-icon"></i>
+                )}
+              </a>
+            </li>
           </ul>
 
           <i
@@ -143,15 +159,7 @@ const Header = () => {
             onClick={() => showMenu(!Toggle)}
           ></i>
         </div>
-        <div className="nav__item" onClick={toggleTheme}>
-          <a className="nav__link">
-            {theme === "light-theme" ? (
-              <i className="uil uil-moon">Dark Mode</i>
-            ) : (
-              <i className="uil uil-brightness">Light Mode</i>
-            )}
-          </a>
-        </div>
+
         <div className="nav__toggle">
           <i className="uil uil-apps" onClick={() => showMenu(!Toggle)}></i>
         </div>

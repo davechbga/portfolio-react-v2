@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 
 const Contact = () => {
   const form = useRef();
@@ -20,11 +22,33 @@ const Contact = () => {
   };
   return (
     <section className="contact section" id="contact">
-      <h2 className="section__title">Contact</h2>
-      <span className="section__subtitle">Get in touch</span>
+      <motion.h2
+        variants={fadeIn("up", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="section__title"
+      >
+        Contact
+      </motion.h2>
+      <motion.span
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="section__subtitle"
+      >
+        Get in touch
+      </motion.span>
 
       <div className="contact__container container grid">
-        <div className="contact__content">
+        <motion.div
+          variants={fadeIn("right", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="contact__content"
+        >
           <h3 className="contact__title">Talk to me</h3>
 
           <div className="contact__info">
@@ -42,16 +66,6 @@ const Contact = () => {
               </a>
             </div>
 
-            {/* <div className="contact__card">
-              <i className="bx bxl-whatsapp contact__card-icon"></i>
-              <h3 className="contact__card-title">Adress</h3>
-              <span className="contact__card-data">Quito, Ecuador</span>
-              <a href="https://m.me/davechbga" className="contact__button">
-                Write me
-                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
-              </a>
-            </div> */}
-
             <div className="contact__card">
               <i className="bx bxl-whatsapp contact__card-icon"></i>
               <h3 className="contact__card-title">Whatsapp</h3>
@@ -66,9 +80,15 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="contact__content">
+        <motion.div
+          variants={fadeIn("left", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="contact__content"
+        >
           <h3 className="contact__title">Message me</h3>
 
           <form ref={form} onSubmit={sendEmail} className="contact__form">
@@ -132,7 +152,7 @@ const Contact = () => {
               <p className="contact__message">Message sent</p>
             ) : null}
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

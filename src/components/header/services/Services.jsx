@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./services.css";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../../variants";
 
 const Services = () => {
   const [toggleState, setToggleState] = useState(0);
@@ -9,11 +11,29 @@ const Services = () => {
   };
   return (
     <section className="services section" id="services">
-      <h2 className="section__title">Services</h2>
-      <span className="section__subtitle">What I offer</span>
+      <motion.h2
+        variants={fadeIn("up", 0.3)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="section__title"
+      >Services</motion.h2>
+      <motion.span
+        variants={fadeIn("up", 0.4)}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{ once: false, amount: 0.7 }}
+        className="section__subtitle"
+      >What I offer</motion.span>
 
       <div className="services__container container grid">
-        <div className="services__content">
+        <motion.div
+          variants={fadeIn("right", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="services__content"
+        >
           <div>
             <i className="uil uil-web-grid services__icon"></i>
             <h3 className="services__title">
@@ -77,8 +97,14 @@ const Services = () => {
               </ul>
             </div>
           </div>
-        </div>
-        <div className="services__content">
+        </motion.div>
+        <motion.div
+          variants={fadeIn("up", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="services__content"
+        >
           <div>
             <i className="uil uil-edit services__icon"></i>
             <h3 className="services__title">
@@ -115,36 +141,44 @@ const Services = () => {
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                  Creation of Visual Elements and Graphics.
-                  </p>
-                </li>
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">Design of Newsletters and Digital Marketing Materials.</p>
-                </li>
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                  Creation of Custom Templates and Themes.
+                    Creation of Visual Elements and Graphics.
                   </p>
                 </li>
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                  Branding and Identity Design.
+                    Design of Newsletters and Digital Marketing Materials.
                   </p>
                 </li>
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                  Infographics and Data Visualization.
+                    Creation of Custom Templates and Themes.
+                  </p>
+                </li>
+                <li className="services__modal-service">
+                  <i className="uil uil-check-circle services__modal-icon"></i>
+                  <p className="services__modal-info">
+                    Branding and Identity Design.
+                  </p>
+                </li>
+                <li className="services__modal-service">
+                  <i className="uil uil-check-circle services__modal-icon"></i>
+                  <p className="services__modal-info">
+                    Infographics and Data Visualization.
                   </p>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-        <div className="services__content">
+        </motion.div>
+        <motion.div
+          variants={fadeIn("left", 0.4)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
+          className="services__content"
+        >
           <div>
             <i className="uil uil-arrow services__icon"></i>
             <h3 className="services__title">
@@ -180,35 +214,35 @@ const Services = () => {
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                  Interaction Prototyping.
-                  </p>
-                </li>
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">Icon and Illustration Design.</p>
-                </li>
-                <li className="services__modal-service">
-                  <i className="uil uil-check-circle services__modal-icon"></i>
-                  <p className="services__modal-info">
-                  Responsive Design.
+                    Interaction Prototyping.
                   </p>
                 </li>
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                  Usability Testing and User Research.
+                    Icon and Illustration Design.
+                  </p>
+                </li>
+                <li className="services__modal-service">
+                  <i className="uil uil-check-circle services__modal-icon"></i>
+                  <p className="services__modal-info">Responsive Design.</p>
+                </li>
+                <li className="services__modal-service">
+                  <i className="uil uil-check-circle services__modal-icon"></i>
+                  <p className="services__modal-info">
+                    Usability Testing and User Research.
                   </p>
                 </li>
                 <li className="services__modal-service">
                   <i className="uil uil-check-circle services__modal-icon"></i>
                   <p className="services__modal-info">
-                  A/B Testing and Iterative Design.
+                    A/B Testing and Iterative Design.
                   </p>
                 </li>
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
