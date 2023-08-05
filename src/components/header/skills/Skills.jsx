@@ -28,19 +28,13 @@ const Skills = () => {
         My technical level
       </motion.span>
 
-      <motion.div
-        variants={fadeIn("down", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.7 }}
-        className="skills__container container grid"
-      >
+      <div className="skills__container container grid">
         <Frontend />
 
         <Backend />
         <UIUX />
         <GraphicDesign />
-      </motion.div>
+      </div>
     </section>
   );
 };

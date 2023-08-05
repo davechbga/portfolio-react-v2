@@ -28,27 +28,17 @@ const Contact = () => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="section__title"
-      >
-        Contact
-      </motion.h2>
+      >Contact</motion.h2>
       <motion.span
         variants={fadeIn("up", 0.4)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="section__subtitle"
-      >
-        Get in touch
-      </motion.span>
+      >Get in touch</motion.span>
 
       <div className="contact__container container grid">
-        <motion.div
-          variants={fadeIn("right", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="contact__content"
-        >
+        <div className="contact__content">
           <h3 className="contact__title">Talk to me</h3>
 
           <div className="contact__info">
@@ -66,6 +56,16 @@ const Contact = () => {
               </a>
             </div>
 
+            {/* <div className="contact__card">
+              <i className="bx bxl-whatsapp contact__card-icon"></i>
+              <h3 className="contact__card-title">Adress</h3>
+              <span className="contact__card-data">Quito, Ecuador</span>
+              <a href="https://m.me/davechbga" className="contact__button">
+                Write me
+                <i className="bx bx-right-arrow-alt contact__button-icon"></i>
+              </a>
+            </div> */}
+
             <div className="contact__card">
               <i className="bx bxl-whatsapp contact__card-icon"></i>
               <h3 className="contact__card-title">Whatsapp</h3>
@@ -80,15 +80,9 @@ const Contact = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="contact__content"
-        >
+        <div className="contact__content">
           <h3 className="contact__title">Message me</h3>
 
           <form ref={form} onSubmit={sendEmail} className="contact__form">
@@ -152,7 +146,7 @@ const Contact = () => {
               <p className="contact__message">Message sent</p>
             ) : null}
           </form>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

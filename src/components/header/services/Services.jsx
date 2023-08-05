@@ -17,23 +17,21 @@ const Services = () => {
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="section__title"
-      >Services</motion.h2>
+      >
+        Services
+      </motion.h2>
       <motion.span
         variants={fadeIn("up", 0.4)}
         initial="hidden"
         whileInView={"show"}
         viewport={{ once: false, amount: 0.7 }}
         className="section__subtitle"
-      >What I offer</motion.span>
+      >
+        What I offer
+      </motion.span>
 
       <div className="services__container container grid">
-        <motion.div
-          variants={fadeIn("right", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="services__content"
-        >
+        <div className="services__content">
           <div>
             <i className="uil uil-web-grid services__icon"></i>
             <h3 className="services__title">
@@ -97,14 +95,8 @@ const Services = () => {
               </ul>
             </div>
           </div>
-        </motion.div>
-        <motion.div
-          variants={fadeIn("up", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="services__content"
-        >
+        </div>
+        <div className="services__content">
           <div>
             <i className="uil uil-edit services__icon"></i>
             <h3 className="services__title">
@@ -171,14 +163,8 @@ const Services = () => {
               </ul>
             </div>
           </div>
-        </motion.div>
-        <motion.div
-          variants={fadeIn("left", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="services__content"
-        >
+        </div>
+        <div className="services__content">
           <div>
             <i className="uil uil-arrow services__icon"></i>
             <h3 className="services__title">
@@ -242,7 +228,7 @@ const Services = () => {
               </ul>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,17 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { fadeIn } from "../../../variants";
 
 const Frontend = () => {
   return (
-    <motion.div
-      variants={fadeIn("right", 0.4)}
-      initial="hidden"
-      whileInView={"show"}
-      viewport={{ once: false, amount: 0.7 }}
-      
-      className="skills__content"
-    >
+    <div className="skills__content">
       <h3 className="skills__title">Frontend</h3>
 
       <div className="skills__box">
@@ -61,7 +52,7 @@ const Frontend = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

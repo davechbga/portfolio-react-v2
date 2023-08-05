@@ -58,11 +58,7 @@ const Qualification = () => {
         </div>
 
         <div className="qualification__sections">
-          <motion.div
-            variants={fadeIn("right", 0.4)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.7 }}
+          <div
             className={
               toggleState === 1
                 ? "qualification__content qualification__content-active"
@@ -103,13 +99,9 @@ const Qualification = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            variants={fadeIn("left", 0.4)}
-            initial="hidden"
-            whileInView={"show"}
-            viewport={{ once: false, amount: 0.7 }}
+          <div
             className={
               toggleState === 2
                 ? "qualification__content qualification__content-active"
@@ -180,7 +172,7 @@ const Qualification = () => {
                 <span className="qualification__line"></span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
