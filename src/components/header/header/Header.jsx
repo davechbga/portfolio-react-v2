@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <div className="header">
       <nav className="nav container">
-        <a href="index.html" className="nav__logo">
+        <a href="#home" className="nav__logo">
           Dave.
         </a>
 
@@ -56,7 +56,7 @@ const Header = () => {
                   activeNav === "#home" ? "nav__link active-link" : "nav__link"
                 }
               >
-                <i className="uil uil-house-user nav__icon"></i> Home
+                <i className="uil uil-estate nav__icon"></i> Home
               </a>
             </li>
             <li className="nav__item">
@@ -112,6 +112,19 @@ const Header = () => {
             </li>
             <li className="nav__item">
               <a
+                href="#qualification"
+                onClick={() => setActiveNav("#qualification")}
+                className={
+                  activeNav === "#qualification"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+              >
+                <i className="uil uil-book-open nav__icon"></i> Qualification
+              </a>
+            </li>
+            <li className="nav__item">
+              <a
                 href="#contact"
                 onClick={() => setActiveNav("#contact")}
                 className={
@@ -123,23 +136,6 @@ const Header = () => {
                 <i className="uil uil-message nav__icon"></i> Contact
               </a>
             </li>
-
-            <li className="nav__item">
-              <label className="switch-container" >
-                <input type="checkbox" onClick={toggleTheme}></input>
-                <span className="slider"></span>
-              </label>
-            </li>
-
-            {/* <li className="nav__item">
-              <a onClick={toggleTheme}>
-                {theme === "light-theme" ? (
-                  <i className="uil uil-moon"></i>
-                ) : (
-                  <i className="uil uil-brightness"></i>
-                )}
-              </a>
-            </li> */}
           </ul>
 
           <i
@@ -147,9 +143,17 @@ const Header = () => {
             onClick={() => showMenu(!Toggle)}
           ></i>
         </div>
-
-        <div className="nav__toggle" onClick={() => showMenu(!Toggle)}>
-          <i className="uil uil-bars"></i>
+        <div className="nav__item" onClick={toggleTheme}>
+          <a className="nav__link">
+            {theme === "light-theme" ? (
+              <i className="uil uil-moon">Dark Mode</i>
+            ) : (
+              <i className="uil uil-brightness">Light Mode</i>
+            )}
+          </a>
+        </div>
+        <div className="nav__toggle">
+          <i className="uil uil-apps" onClick={() => showMenu(!Toggle)}></i>
         </div>
       </nav>
     </div>
