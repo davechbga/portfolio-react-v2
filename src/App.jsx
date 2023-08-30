@@ -11,14 +11,12 @@ import Qualification from "./components/header/qualification/Qualification";
 import Footer from "./components/header/footer/Footer";
 import ScrollUp from "./components/header/scrollup/ScrollUp";
 
-
 function App() {
   return (
     <>
       <Header />
 
       <main className="main">
-
         <Home />
         <About />
         <Skills />
